@@ -90,8 +90,8 @@ module.exports = {
         }
         else {
             // Return the classes as json
-            return res.send(value)
             writeFileSync(path.resolve(__dirname, '..', '..', 'calendars')+`/calengrade-${Date.now()}.ics`, value)
+            return res.send(value)
         }
 
     }

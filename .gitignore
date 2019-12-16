@@ -1,5 +1,5 @@
 # Output files
-/backend/calendars/*
+calendars/*
 
 # Logs
 logs
