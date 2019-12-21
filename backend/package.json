@@ -4,12 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
     "ics": "^2.18.0",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.3"
