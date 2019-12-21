@@ -93,9 +93,8 @@ module.exports = {
         const { error, value } = ics.createEvents(calendar)
 
         if (error) {
-            console.log(error)
-            // Return the classes as json
-            return res.json(error)
+            // Return the error
+            return res.status(400).json({error})
         }
         else {
             // Return the classes as json
