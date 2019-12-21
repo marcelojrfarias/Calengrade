@@ -67,10 +67,19 @@ module.exports = {
 
                 recurrenceRule += `UNTIL=${moment.utc(periodEndDate).format("YYYYMMDDThhmmss")}Z`
 
+                
+                let description = ""
+                
+                subject.info.forEach(info => {
+                    description += `${info.title}: ${info.content}\n`
+                })
+                
+                // 'Aula de ' + subject.title + "\n" + 'Turma: ' + subject.id + "\n" + 'Turno: ' + subject.shift + "\n" + 'TPI: ' + subject.tpi,
+
                 let event = {
                     title: subject.title,
-                    description: 'Aula de ' + subject.title + "\n" + 'Turma: ' + subject.id + "\n" + 'Turno: ' + subject.shift + "\n" + 'TPI: ' + subject.tpi,
                     location: 'UFABC - ' + subject.campus, 
+                    description,
                     status: 'CONFIRMED',
                     start: start.format('YYYY-M-D-H-m').split("-"),
                     end: end.format('YYYY-M-D-H-m').split("-"),

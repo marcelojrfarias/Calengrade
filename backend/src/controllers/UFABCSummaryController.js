@@ -56,12 +56,26 @@ module.exports = {
         
             // Split the classes info
             let myClassInfo = {
-                code: originalClass.info.match(/[A-Z0-9]{7}[-][0-9]{2}/gi)[0],
                 title: originalClass.info.match(/(?![\s-\s])([0-9a-záàâãéèêíïóôõöúçñ, ]{2,})(?=\s\w{1,2}-)/gi)[0],
-                id: originalClass.info.match(/([A-Z]{1}[0-9]?(?=-(Noturno|Matutino)))/g)[0],
-                shift: originalClass.info.match(/(?!-)(Noturno|Matutino)/gi)[0],
-                tpi: originalClass.info.match(/(?!\()(\d{1,2}\s-\s\d{1,2}\s-\s\d{1,2})(?=\))/gi)[0],
-                campus: originalClass.info.match(/(Campus\s)(Santo\sAndré|São\sBernardo\sdo\sCampo)/gi)[0]
+                campus: originalClass.info.match(/(Campus\s)(Santo\sAndré|São\sBernardo\sdo\sCampo)/gi)[0],
+                info: [
+                    {
+                        title: "Código",
+                        content: originalClass.info.match(/[A-Z0-9]{7}[-][0-9]{2}/gi)[0]
+                    },
+                    {
+                        title: "Turma",
+                        content: originalClass.info.match(/([A-Z]{1}[0-9]?(?=-(Noturno|Matutino)))/g)[0]
+                    },
+                    {
+                        title: "Turno",
+                        content: originalClass.info.match(/(?!-)(Noturno|Matutino)/gi)[0],
+                    },
+                    {
+                        title: "TPI",
+                        content: originalClass.info.match(/(?!\()(\d{1,2}\s-\s\d{1,2}\s-\s\d{1,2})(?=\))/gi)[0],
+                    }
+                ]
             }
             
             // Split the classes times
