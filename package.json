@@ -25,7 +25,7 @@
     "frontend-test": "yarn test --prefix frontend",
     "frontend-eject": "yarn eject --prefix frontend",
     "backend-dev": "nodemon backend/src/server.js",
-    "backend-start": "node backend/src/server.js",
+    "start": "node backend/src/server.js",
     "dev": "concurrently \"yarn run backend-dev\" \"yarn run frontend-start\"",
     "heroku-postbuild": "yarn install --prefix backend && yarn install --prefix frontend && yarn build --prefix frontend"
   }
