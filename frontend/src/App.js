@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
+import FileDownload from 'js-file-download'
 import api from './services/api'
 import './App.css'
 
-import logo from './assets/logo-yellow.svg'
-
-import FileDownload from 'js-file-download'
+import logo from './assets/logo.svg'
 
 function App() {
 
@@ -60,6 +59,7 @@ function App() {
               <input 
                 id="startDate"
                 type="date"
+                className="startDate"
                 placeholder="Data do início do quadrimestre"
                 value={startDate}
                 onChange = {event => setStartDate(event.target.value)}
@@ -67,10 +67,11 @@ function App() {
             </div>
 
             <div className="date">
-              <label htmlFor="endDate">FINAL DO QUADRI:*</label>
+              <label htmlFor="endDate">FIM DO QUADRI:*</label>
               <input 
                 id="endDate"
                 type="date"
+                className="endDate"
                 placeholder="Data do final do quadrimestre"
                 value={endDate}
                 onChange = {event => setEndDate(event.target.value)}
@@ -95,6 +96,9 @@ function App() {
           <button type="submit">Gerar Calengrade</button>
         </form>
       </div>
+
+      <span className="footer">Feito com ❤ por <a className="footer" rel="noopener noreferrer" target="_blank" href="https://github.com/marcelojrfarias">Marcelo Farias</a></span>
+
     </div>
   );
 }

@@ -53,8 +53,10 @@ body, input, button {
 }
 
 .dates {
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: line;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -62,8 +64,7 @@ body, input, button {
 .dates div {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
-  min-width: 50%;
+  flex-grow: 1;
 }
 
 .content form label {
@@ -74,13 +75,14 @@ body, input, button {
 }
 
 .content form input {
-  margin-right: 10px;
   margin-bottom: 10px;
+  margin-right: 10px;
   border: 1px solid #ddd;
   border-radius: 2px;
   height: 45px;
   padding: 0 15px;
   font-size: 16px;
+  min-width: 200px;
   flex-grow: 1;
 }
 
@@ -102,7 +104,7 @@ body, input, button {
   font-size: 16px;
   font-weight: bold;
   background: #ffcc00;
-  color: #000000;
+  color: #444444;
   cursor: pointer;
 }
 
@@ -122,4 +124,25 @@ a.hint {
   font-size: 14px;
   font-style: italic;
   margin-bottom: 20px;
+}
+
+
+span.footer {
+  text-align: center;
+  font-style: bold;
+  font-size: 16px;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+a.footer {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+
+a.footer:hover {
+  color: #ffcc00;
 }
