@@ -1,4 +1,6 @@
 {
+  "name": "calengrade",
+  "version": "0.1.0",
   "dependencies": {
     "concurrently": "^5.0.2"
   },
