@@ -97,9 +97,22 @@ module.exports = {
             return res.status(400).json({error})
         }
         else {
-            // Return the classes as json
-            writeFileSync(path.resolve(__dirname, '..', '..', 'calendars')+`/calengrade-${Date.now()}.ics`, value)
-            return res.send(value)
+            let pathName = path.resolve(__dirname, '..', '..', 'calendars')+`/calengrade-${Date.now()}.ics`
+            writeFileSync(pathName, value)
+            return res.download(pathName, 'YourCalengrade.ics', (err) => {
+            if (err) {
+                console.log(err)
+                return
+            } else {
+                console.log('Calendar file downloaded!')
+                
+                // Delete the file ! 
+
+                //do something
+            }
+            })
+
+            // return res.send(value)
         }
 
     }

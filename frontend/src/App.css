@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  background: #006633; /* url(./assets/background.jpg)  no-repeat; */
+  background-size: cover;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+body, input, button {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  margin: 30px auto 0;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  background: #fff;
+  margin-top: 20px;
+  border-radius: 4px;
+  padding: 30px;
+}
+
+.content > p {
+  font-size: 22px;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.content > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.dates {
+  display: flex;
+  flex-direction: line;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dates div {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  min-width: 50%;
+}
+
+.content form label {
+  font-size: 14px;
+  color: #444;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.content form input {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  height: 45px;
+  padding: 0 15px;
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+.content form textarea {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  height: 150px;
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.content button {
+  border: 0;
+  border-radius: 2px;
+  width: 100%;
+  height: 42px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ffcc00;
+  color: #000000;
+  cursor: pointer;
+}
+
+.content button:hover {
+  background: #dfb200;
+}
+
+p.hint {
+  text-align: center;
+  font-style: italic;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+a.hint {
+  text-decoration: none;
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
