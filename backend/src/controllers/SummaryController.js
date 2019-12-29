@@ -10,11 +10,12 @@ module.exports = {
         // Get the summary info
         let { summary, quarterStartDate, quarterEndDate } = req.body
 
+        
         if (moment(quarterStartDate).isValid())
             quarterClasses.startDate = moment(quarterStartDate)
         else
             return res.status(400).json({error: 'Data de início do Quadrimestre inválida!'})
-            
+        
         if (moment(quarterEndDate).isValid())
             quarterClasses.endDate = moment(quarterEndDate)
         else

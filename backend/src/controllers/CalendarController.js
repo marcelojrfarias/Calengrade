@@ -1,4 +1,4 @@
-const { writeFileSync } = require('fs')
+const { writeFileSync, unlink } = require('fs')
 const moment = require('moment')
 const ics = require('ics')
 const path = require('path')
@@ -7,7 +7,7 @@ module.exports = {
 
     store(req, res) {
 
-        var { classes, periodStartDate, periodEndDate } = req.body;
+        var { classes, startDate, endDate } = req.body;
 
         calendar = []
         
@@ -36,27 +36,28 @@ module.exports = {
         classes.forEach( subject => {
             subject.times.forEach(time => {
                 
-                let startOfPeriod = moment.utc(periodStartDate)
+                // Maybe should be the local timezone and not the utc
+                let startOfPeriod = moment.utc(startDate)
 
                 if (startOfPeriod.day() <= getDay(time.day))
                     startOfPeriod.add(getDay(time.day) - startOfPeriod.day(), 'days')
                 else if (startOfPeriod.day() > getDay(time.day))
                     startOfPeriod.add(startOfPeriod.day() + getDay(time.day), 'days')
-
+                
                 let start = startOfPeriod.clone()   
                 let end = startOfPeriod.clone()
-
+                
                 if (time.repeat.indexOf("quinzenal (II)") != -1) {
                     start.add(7, 'days')
                     end.add(7, 'days')
                 }
-                
+
                 start.add(time.start.split(':')[0], 'hours')
                 start.add(time.start.split(':')[1], 'minutes')
                 
                 end.add(time.end.split(':')[0], 'hours')
                 end.add(time.end.split(':')[1], 'minutes')
-            
+                
                 let recurrenceRule = `FREQ=WEEKLY;`
                 recurrenceRule += `BYDAY=${getDayOfWeek(time.day)};`
                 
@@ -65,9 +66,8 @@ module.exports = {
                 else if (time.repeat.indexOf("quinzenal (I)") != -1 || time.repeat.indexOf("quinzenal (II)") != -1)
                     recurrenceRule += `INTERVAL=2;`
 
-                recurrenceRule += `UNTIL=${moment.utc(periodEndDate).format("YYYYMMDDThhmmss")}Z`
+                recurrenceRule += `UNTIL=${moment.utc(endDate).format("YYYYMMDDThhmmss")}Z`
 
-                
                 let description = ""
                 
                 subject.info.forEach(info => {
@@ -106,7 +106,10 @@ module.exports = {
             } else {
                 console.log('Calendar file downloaded!')
                 
-                // Delete the file ! 
+                unlink(pathName, (err) => {
+                if (err) throw err;
+                    console.log(`${pathName} was deleted`);
+                });
 
                 //do something
             }
