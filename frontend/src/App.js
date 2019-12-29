@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useAlert } from 'react-alert'
 import FileDownload from 'js-file-download'
 import api from './services/api'
 import './App.css'
@@ -6,6 +7,8 @@ import './App.css'
 import logo from './assets/logo.svg'
 
 function App() {
+
+  const alert = useAlert()
 
   const [startDate, setStartDate] = useState('')
   const [endDate, setEndDate] = useState('')
@@ -17,8 +20,10 @@ function App() {
       handleCalendar(response.data)
       console.log('SUCCESS', response)
     }
-    else
-      console.log(response)
+    else {
+      console.log('ERROR', response)
+      alert.error(response.data)
+    }
   }
 
   async function handleCalendar(summary) {
@@ -26,13 +31,33 @@ function App() {
     if (response.status === 200) {
       console.log('SUCCESS', response.data)
       FileDownload(response.data, 'MyCalengrade.ics')
+      alert.success('Calegrade gerado com sucesso! :)')
+      alert.success('Agora é só abrir no aplicativo de sua preferência! ;)')
+      setSummary('')
     }
-    else
+    else {
       console.log('ERROR', response)
+      alert.error(response.data)
+    }
   }
 
   async function handleSubmit(event) {
     event.preventDefault()
+
+    if (startDate === '') {  
+      alert.show('Opa! Informe quando começa o quadri!')
+      return
+    }
+
+    if (endDate === '') {
+      alert.show('Opa! Informe quando acaba o quadri!')
+      return
+    }
+
+    if (summary === '') {
+      alert.show('Opa! Cole seu resumo!')
+      return
+    }
 
     handleSummary({
       university: 'UFABC',
@@ -100,7 +125,7 @@ function App() {
       <span className="footer">Feito com ❤ por <a className="footer" rel="noopener noreferrer" target="_blank" href="https://github.com/marcelojrfarias">Marcelo Farias</a></span>
 
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
