@@ -37,21 +37,27 @@ module.exports = {
             subject.times.forEach(time => {
                 
                 // Maybe should be the local timezone and not the utc
-                let startOfPeriod = moment.utc(startDate)
+                let startOfPeriod = moment(startDate)
 
                 if (startOfPeriod.day() <= getDay(time.day))
                     startOfPeriod.add(getDay(time.day) - startOfPeriod.day(), 'days')
                 else if (startOfPeriod.day() > getDay(time.day))
                     startOfPeriod.add(startOfPeriod.day() + getDay(time.day), 'days')
                 
+                console.log(startOfPeriod.format(), startOfPeriod.isDST(), startOfPeriod.utcOffset())
+                
+                if (time.repeat.indexOf("quinzenal (II)") != -1) {
+                    startOfPeriod.add(7, 'days')
+                }
+
+                if (startOfPeriod.isDST())
+                    startOfPeriod.add(1, 'hour')
+
+                console.log(startOfPeriod.format(), startOfPeriod.isDST(), startOfPeriod.utcOffset())
+
                 let start = startOfPeriod.clone()   
                 let end = startOfPeriod.clone()
                 
-                if (time.repeat.indexOf("quinzenal (II)") != -1) {
-                    start.add(7, 'days')
-                    end.add(7, 'days')
-                }
-
                 start.add(time.start.split(':')[0], 'hours')
                 start.add(time.start.split(':')[1], 'minutes')
                 
@@ -71,11 +77,9 @@ module.exports = {
                 let description = ""
                 
                 subject.info.forEach(info => {
-                    description += `${info.title}: ${info.content}\n`
+                    description += `${info.title}: ${info.content}` + "\n"
                 })
                 
-                // 'Aula de ' + subject.title + "\n" + 'Turma: ' + subject.id + "\n" + 'Turno: ' + subject.shift + "\n" + 'TPI: ' + subject.tpi,
-
                 let event = {
                     title: subject.title,
                     location: 'UFABC - ' + subject.campus, 

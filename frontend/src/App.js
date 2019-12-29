@@ -48,7 +48,7 @@ function App() {
       <img src={logo} alt="Calengrade"/>
       <div className="content">
         <p>
-          Adicione sua <strong>grade</strong> ao seu <strong>calendário</strong> facilmente
+          Adicione sua <strong>grade</strong> ao seu <strong>calendário</strong> e centralize seus eventos
         </p>
 
         <form onSubmit={handleSubmit}>
@@ -79,18 +79,18 @@ function App() {
 
           </div>
           
-          <p className="hint">Você pode acessar o calendário acadêmico no <a className="hint" href="http://prograd.ufabc.edu.br/calendarios">Site da Prograd</a></p>
+          <p className="hint">Acesse o calendário acadêmico no <a className="hint" href="http://prograd.ufabc.edu.br/calendarios">Site da Prograd</a></p>
         
           <label htmlFor="summary">RESUMO*</label>
           <textarea 
             id="summary"
             type=""
-            placeholder="Resumo das disciplina que você conseguiu pegar"
+            placeholder="Cole aqui o resumo das disciplina que você conseguiu pegar"
             value={summary}
             onChange = {event => setSummary(event.target.value)}
           />
 
-          <p className="hint">Você pode acessar o seu resumo no <a className="hint" href="https://matricula.ufabc.edu.br/matricula/resumo">Portal de Matrículas</a></p>
+          <p className="hint">Copie o seu resumo no <a className="hint" href="https://matricula.ufabc.edu.br/matricula/resumo">Portal de Matrículas</a></p>
 
           <button type="submit">Gerar Calengrade</button>
         </form>
