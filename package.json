@@ -1,31 +1,9 @@
 {
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "axios": "^0.19.0",
-    "concurrently": "^5.0.2",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "ics": "^2.18.0",
-    "js-file-download": "^0.4.9",
-    "moment": "^2.24.0",
-    "morgan": "^1.9.1",
-    "nodemon": "^2.0.2",
-    "react": "^16.12.0",
-    "react-alert": "^6.0.0",
-    "react-alert-template-basic": "^1.0.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "concurrently": "^5.0.2"
   },
   "scripts": {
-    "frontend-start": "npm start --prefix frontend",
-    "frontend-build": "yarn build --prefix frontend",
-    "frontend-test": "yarn test --prefix frontend",
-    "frontend-eject": "yarn eject --prefix frontend",
-    "backend-dev": "yarn dev --prefix backend",
-    "backend-start": "yarn start --prefix backend",
+    "start": "yarn start --prefix backend",
     "dev": "concurrently \"yarn run backend-dev\" \"yarn run frontend-start\"",
     "heroku-postbuild": "yarn install --prefix backend && yarn install --prefix frontend && yarn build --prefix frontend"
   }
