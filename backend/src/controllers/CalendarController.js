@@ -100,22 +100,18 @@ module.exports = {
             let pathName = path.resolve(__dirname, '..', '..', 'calendars')+`/calengrade-${Date.now()}.ics`
             writeFileSync(pathName, value)
             return res.download(pathName, 'YourCalengrade.ics', (err) => {
-            if (err) {
-                console.log(err)
-                return
-            } else {
-                console.log('Calendar file downloaded!')
-                
-                unlink(pathName, (err) => {
-                if (err) throw err;
-                    console.log(`${pathName} was deleted`);
-                });
-
-                //do something
-            }
+                if (err) {
+                    console.log(err)
+                    return
+                } else {
+                    console.log('Calendar file downloaded!')
+                    
+                    unlink(pathName, (err) => {
+                    if (err) throw err;
+                        console.log(`${pathName} was deleted`);
+                    });
+                }
             })
-
-            // return res.send(value)
         }
 
     }
