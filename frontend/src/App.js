@@ -18,10 +18,10 @@ function App() {
     const response = await api.post('/summary', form)
     if (response.status === 200) {
       handleCalendar(response.data)
-      // console.log('SUCCESS', response)
+      console.log('SUCCESS', response)
     }
     else {
-      // console.log('ERROR', response)
+      console.log('ERROR', response)
       alert.error(response.data)
     }
   }
@@ -29,14 +29,14 @@ function App() {
   async function handleCalendar(summary) {
     const response = await api.post('/calendar', summary, {responseType: 'text'})
     if (response.status === 200) {
-      // console.log('SUCCESS', response.data)
+      console.log('SUCCESS', response.data)
       FileDownload(response.data, 'MyCalengrade.ics')
       alert.success('Calegrade gerado com sucesso! :)')
       alert.success('Agora é só abrir no aplicativo de sua preferência! ;)')
       setSummary('')
     }
     else {
-      // console.log('ERROR', response)
+      console.log('ERROR', response)
       alert.error(response.data)
     }
   }
