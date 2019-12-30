@@ -43,17 +43,13 @@ module.exports = {
                     startOfPeriod.add(getDay(time.day) - startOfPeriod.day(), 'days')
                 else if (startOfPeriod.day() > getDay(time.day))
                     startOfPeriod.add(startOfPeriod.day() + getDay(time.day), 'days')
-                
-                console.log(startOfPeriod.format(), startOfPeriod.isDST(), startOfPeriod.utcOffset())
-                
+                                
                 if (time.repeat.indexOf("quinzenal (II)") != -1) {
                     startOfPeriod.add(7, 'days')
                 }
 
                 if (startOfPeriod.isDST())
                     startOfPeriod.add(1, 'hour')
-
-                console.log(startOfPeriod.format(), startOfPeriod.isDST(), startOfPeriod.utcOffset())
 
                 let start = startOfPeriod.clone()   
                 let end = startOfPeriod.clone()

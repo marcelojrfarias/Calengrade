@@ -1,12 +1,23 @@
 {
   "name": "calengrade",
   "version": "0.1.0",
+  "description": "A tool to generate a calendar file from classes table.",
+  "keywords": [
+    "calendario",
+    "grade",
+    "ufabc"
+  ],
+  "author": "marcelojrfarias",
+  "license": "MIT",
+  "engines": {
+    "node": "10.x"
+  },
   "dependencies": {
     "concurrently": "^5.0.2"
   },
   "scripts": {
-    "start": "yarn start --prefix backend",
-    "dev": "concurrently \"yarn run backend-dev\" \"yarn run frontend-start\"",
-    "heroku-postbuild": "yarn install --prefix backend && yarn install --prefix frontend && yarn build --prefix frontend"
+    "start": "npm start --prefix backend",
+    "dev": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\"",
+    "heroku-postbuild": "npm install --prefix frontend && npm build --prefix frontend"
   }
 }

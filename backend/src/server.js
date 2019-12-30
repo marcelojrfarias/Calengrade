@@ -18,4 +18,4 @@ app.use(morgan('dev'))
 
 app.use(routes);
 
-app.listen(process.env.PORT || 3333, () => console.log('Server ready!'));
+app.listen(process.env.PORT || 3333, () => console.log(`Server ready on PORT: ${process.env.PORT || 3333}`));
