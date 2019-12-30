@@ -10,8 +10,8 @@ function App() {
 
   const alert = useAlert()
 
-  const [startDate, setStartDate] = useState('')
-  const [endDate, setEndDate] = useState('')
+  const [startDate, setStartDate] = useState('2020-02-10')
+  const [endDate, setEndDate] = useState('2020-05-15')
   const [summary, setSummary] = useState('')
 
   async function handleSummary(form) {
@@ -43,6 +43,8 @@ function App() {
 
   async function handleSubmit(event) {
     event.preventDefault()
+
+    console.log(startDate, endDate)
 
     if (startDate === '') {  
       alert.show('Opa! Informe quando começa o quadri!')
