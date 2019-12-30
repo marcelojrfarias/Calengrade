@@ -122,7 +122,7 @@ function App() {
         </form>
       </div>
 
-      <span className="footer">Feito com ❤ por <a className="footer" rel="noopener noreferrer" target="_blank" href="https://github.com/marcelojrfarias">Marcelo Farias</a></span>
+      <span className="footer">Feito com <span role="img" aria-label="Heart">❤️</span> por <a className="footer" rel="noopener noreferrer" target="_blank" href="https://github.com/marcelojrfarias">Marcelo Farias</a> com uma <span role="img" aria-label="Help">✋</span> dos amigos</span>
 
     </div>
   )
