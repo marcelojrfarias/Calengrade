@@ -21,9 +21,11 @@ app.use(morgan('dev'))
 app.use(routes);
 
 if (process.env.NODE_ENV === 'production') {
+    console.log(path.resolve(__dirname, '..', '..', 'frontend', 'build'))
     app.use(express.static(path.resolve(__dirname, '..', '..', 'frontend', 'build')))
 
     app.get('*', (req, res) => {
+        console.log(path.resolve(__dirname, '..', '..', 'frontend', 'build', 'index.html'))
         res.sendFile(path.resolve(__dirname, '..', '..', 'frontend', 'build', 'index.html'))
     }) 
 }
