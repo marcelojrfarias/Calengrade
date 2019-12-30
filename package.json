@@ -16,7 +16,7 @@
     "concurrently": "^5.0.2"
   },
   "scripts": {
-    "start": "npm start --prefix backend",
+    "start": "npm install --prefix backend && npm start --prefix backend",
     "dev": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\"",
     "heroku-postbuild": "npm install --prefix frontend && npm build --prefix frontend"
   }
