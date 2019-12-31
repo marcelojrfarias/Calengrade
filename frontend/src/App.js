@@ -105,18 +105,18 @@ function App() {
 
           </div>
           
-          <p className="hint">Acesse o calendário acadêmico no <a className="hint" href="http://prograd.ufabc.edu.br/calendarios">Site da Prograd</a></p>
+          <p className="hint">Acesse o calendário acadêmico no <a className="hint" rel="noopener noreferrer" target="_blank" href="http://prograd.ufabc.edu.br/calendarios">Site da Prograd</a></p>
         
           <label htmlFor="summary">RESUMO*</label>
           <textarea 
             id="summary"
             type=""
-            placeholder="Cole aqui o resumo das disciplina que você conseguiu pegar"
+            placeholder="Cole aqui o resumo das disciplinas que você conseguiu pegar"
             value={summary}
             onChange = {event => setSummary(event.target.value)}
           />
 
-          <p className="hint">Copie o seu resumo no <a className="hint" href="https://matricula.ufabc.edu.br/matricula/resumo">Portal de Matrículas</a></p>
+          <p className="hint">Copie o seu resumo no <a className="hint" rel="noopener noreferrer" target="_blank" href="https://matricula.ufabc.edu.br/matricula/resumo">Portal de Matrículas</a></p>
 
           <button type="submit">Gerar Calengrade</button>
         </form>
