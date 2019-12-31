@@ -132,6 +132,9 @@ span.footer {
   font-style: bold;
   font-size: 16px;
   margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: #ffffff;
 }
 
@@ -142,7 +145,30 @@ a.footer {
   margin-top: 20px;
 }
 
-
 a.footer:hover {
+  color: #ffcc00;
+}
+
+.footerMenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerMenuItem {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.footerMenuItem a {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+a.footerMenuItem:hover {
   color: #ffcc00;
 }

@@ -122,6 +122,28 @@ function App() {
         </form>
       </div>
 
+      <div className="footerMenu">
+
+        <div className="footerMenuItem">
+          <span>
+            <a rel="noopener noreferrer" target="_blank" href="https://github.com/marcelojrfarias/calengrade/issues/new">Bugs e Sugestões</a>
+          </span>
+        </div>
+
+        <div className="footerMenuItem">
+          <span>
+            <a rel="noopener noreferrer" target="_blank" href="https://github.com/marcelojrfarias/calengrade">Código Fonte</a>
+          </span>
+        </div>
+
+        <div className="footerMenuItem">
+          <span>
+            <a rel="noopener noreferrer" target="_blank" href="https://facebook.com/marcelojrfarias">Contato</a>
+          </span>
+        </div>
+
+      </div>
+
       <span className="footer">Feito com <span role="img" aria-label="Heart">❤️</span> por <a className="footer" rel="noopener noreferrer" target="_blank" href="https://github.com/marcelojrfarias">Marcelo Farias</a> com uma <span role="img" aria-label="Help">✋</span> dos amigos</span>
 
     </div>
