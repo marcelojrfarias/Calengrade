@@ -42,11 +42,10 @@ body, input, button {
 .footerMessage {
   margin-top: 20px;
   margin-bottom: 40px;
+  text-align: center !important;
 }
 
 .footerMessage span {
-  text-align: center;
-  font-style: bold;
   font-size: 16px;
   margin-left: 10px;
   margin-right: 10px;
