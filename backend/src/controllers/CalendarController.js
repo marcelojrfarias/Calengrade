@@ -38,6 +38,7 @@ module.exports = {
                 
                 // Maybe should be the local timezone and not the utc
                 let startOfPeriod = moment(startDate)
+                console.log('START OF PERIOD: ', startOfPeriod.format('YYYY/MM/DD hh:mm:ss'));
 
                 if (startOfPeriod.day() <= getDay(time.day))
                     startOfPeriod.add(getDay(time.day) - startOfPeriod.day(), 'days')

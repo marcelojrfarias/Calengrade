@@ -67,8 +67,8 @@ export default function Main() {
       return
     }
 
-    console.log(startDate.format('YYYY/MM/DD hh:mm:ss'));
-    console.log(endDate.format('YYYY/MM/DD hh:mm:ss'));
+    console.log(startDate);
+    console.log(endDate);
 
     handleSummary({
       university: 'UFABC',
