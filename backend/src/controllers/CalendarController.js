@@ -104,11 +104,11 @@ module.exports = {
                     console.log(err)
                     return
                 } else {
-                    console.log('Calendar file downloaded!')
+                    // console.log('Calendar file downloaded!')
                     
                     unlink(pathName, (err) => {
                     if (err) throw err;
-                        console.log(`${pathName} was deleted`);
+                        // console.log(`${pathName} was deleted`);
                     });
                 }
             })

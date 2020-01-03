@@ -26,7 +26,7 @@ export default function Main() {
     const response = await api.post('/summary', form)
     if (response.status === 200) {
       handleCalendar(response.data)
-      console.log('SUCCESS', response)
+      // console.log('SUCCESS', response)
     }
     else {
       console.log('ERROR', response)
@@ -37,7 +37,7 @@ export default function Main() {
   async function handleCalendar(summary) {
     const response = await api.post('/calendar', summary, {responseType: 'text'})
     if (response.status === 200) {
-      console.log('SUCCESS', response.data)
+      // console.log('SUCCESS', response.data)
       FileDownload(response.data, 'MyCalengrade.ics')
       alert.success('Calegrade gerado com sucesso! :)')
       alert.success('Agora é só abrir no aplicativo de sua preferência! ;)')
@@ -66,6 +66,9 @@ export default function Main() {
       alert.show('Opa! Cole seu resumo!')
       return
     }
+
+    console.log(startDate.format('YYYY/MM/DD hh:mm:ss'));
+    console.log(endDate.format('YYYY/MM/DD hh:mm:ss'));
 
     handleSummary({
       university: 'UFABC',
