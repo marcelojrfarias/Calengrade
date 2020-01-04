@@ -67,9 +67,6 @@ export default function Main() {
       return
     }
 
-    console.log(startDate);
-    console.log(endDate);
-
     handleSummary({
       university: 'UFABC',
       summary,
