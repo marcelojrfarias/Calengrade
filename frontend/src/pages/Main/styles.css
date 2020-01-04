@@ -44,6 +44,18 @@ form input {
   font-size: 16px;
   min-width: 200px;
   flex-grow: 1;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
 }
 
 form textarea {
@@ -83,6 +95,7 @@ a.hint {
   text-decoration: none !important;
   font-size: 14px !important;
   font-style: italic;
+  font-weight: bold;
   margin-bottom: 20px;
   color: #000000 !important;
 }
