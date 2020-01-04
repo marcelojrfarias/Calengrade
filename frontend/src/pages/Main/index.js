@@ -69,9 +69,6 @@ export default function Main() {
       return
     }
 
-    console.log(moment(startDate).toISOString())
-    console.log(moment(endDate).toISOString())
-
     handleSummary({
       university: 'UFABC',
       summary,
