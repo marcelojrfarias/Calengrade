@@ -36,7 +36,6 @@ module.exports = {
         classes.forEach( subject => {
             subject.times.forEach(time => {
                 
-                // Maybe should be the local timezone and not the utc
                 let startOfPeriod = moment(startDate)
                 console.log('START OF PERIOD: ', startOfPeriod.toISOString());
 
@@ -49,8 +48,8 @@ module.exports = {
                     startOfPeriod.add(7, 'days')
                 }
 
-                if (startOfPeriod.isDST())
-                    startOfPeriod.add(1, 'hour')
+                // if (startOfPeriod.isDST())
+                //     startOfPeriod.add(1, 'hour')
 
                 let start = startOfPeriod.clone()   
                 let end = startOfPeriod.clone()

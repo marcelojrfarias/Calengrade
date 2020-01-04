@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useAlert } from 'react-alert'
-const moment = require('moment')
 import FileDownload from 'js-file-download'
 import api from '../../services/api'
 
 import './styles.css'
+
+const moment = require('moment') 
 
 export default function Main() {
 
@@ -67,6 +68,9 @@ export default function Main() {
       alert.show('Opa! Cole seu resumo!')
       return
     }
+
+    console.log(moment(startDate).toISOString())
+    console.log(moment(endDate).toISOString())
 
     handleSummary({
       university: 'UFABC',
