@@ -15,11 +15,13 @@ body {
   background: #006633;
   background-size: cover;
   -webkit-font-smoothing: antialiased !important;
+  -webkit-appearance: none !important;
 }
 
 body, input, button {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 14px;
+  color: #444444;
 }
 
 .container {

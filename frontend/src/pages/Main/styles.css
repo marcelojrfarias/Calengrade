@@ -38,6 +38,8 @@ form input {
   margin-bottom: 10px;
   margin-right: 10px;
   border: 1px solid #ddd;
+  /* color: #eeeeee; */
+  background-color: #fff;
   border-radius: 2px;
   height: 45px;
   padding: 0 15px;
@@ -45,7 +47,6 @@ form input {
   min-width: 200px;
   flex-grow: 1;
   -webkit-appearance: none !important;
-  appearance: none !important;
 }
 
 input[type=date]::-webkit-calendar-picker-indicator {
