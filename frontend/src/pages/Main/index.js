@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useAlert } from 'react-alert'
+const moment = require('moment')
 import FileDownload from 'js-file-download'
 import api from '../../services/api'
 
@@ -70,8 +71,8 @@ export default function Main() {
     handleSummary({
       university: 'UFABC',
       summary,
-      quarterStartDate: startDate,
-      quarterEndDate: endDate
+      quarterStartDate: moment(startDate).toISOString(),
+      quarterEndDate: moment(endDate).toISOString()
     })
   }
 
