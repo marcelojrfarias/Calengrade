@@ -7,8 +7,8 @@ export default function FooterMenu(props) {
 
   return (
     <div className="container">
-      {menuItems.map(menuItem => (
-        <div>
+      {menuItems.map((menuItem, index) => (
+        <div key={index}>
           <span>
             <a rel="noopener noreferrer" target="_blank" href={menuItem.link}>{menuItem.title}</a>
           </span>
