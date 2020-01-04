@@ -15,7 +15,6 @@ body {
   background: #006633;
   background-size: cover;
   -webkit-font-smoothing: antialiased !important;
-  -webkit-appearance: none !important;
 }
 
 body, input, button {

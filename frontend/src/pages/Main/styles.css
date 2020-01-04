@@ -35,19 +35,18 @@ form label {
 }
 
 form input {
-  display: flex;
+  -webkit-appearance: none !important;
+  display: flex !important;
+  flex-grow: 1 !important;
   margin-bottom: 10px;
   margin-right: 10px;
   border: 1px solid #ddd;
-  /* color: #eeeeee; */
   background-color: #fff;
   border-radius: 2px;
   height: 45px;
   padding: 0 15px;
   font-size: 16px;
-  /* min-width: 110px; */
-  flex-grow: 1;
-  -webkit-appearance: none !important;
+  cursor: pointer;
 }
 
 input[type=date]::-webkit-calendar-picker-indicator {
