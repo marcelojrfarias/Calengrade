@@ -29,15 +29,16 @@ form {
 
 form label {
   font-size: 14px;
-  color: #444;
   font-weight: bold;
+  color: #444;
   margin-bottom: 8px;
 }
 
 form input {
   -webkit-appearance: none;
+  min-width: 200px;
   margin-bottom: 10px;
-  margin-right: 10px;
+  width: calc(100% - 10px);
   border: 1px solid #ddd;
   background-color: #fff;
   border-radius: 2px;
