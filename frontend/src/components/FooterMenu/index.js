@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import './styles.css'
-import { render } from '@testing-library/react'
 
 class FooterMenu extends Component {
 
