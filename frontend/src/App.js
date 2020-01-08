@@ -5,7 +5,7 @@ import Routes from './routes'
 
 import logo from './assets/logo.svg'
 
-import FooterMenu from './components/FooterMenu/'
+import FooterMenu from './components/FooterMenu'
 
 function App() {
 
