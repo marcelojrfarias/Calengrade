@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import './styles.css'
 
 class FooterMenu extends Component {
-
   render() {
     const { menuItems } = this.props
     return (
