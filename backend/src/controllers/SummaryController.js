@@ -8,16 +8,16 @@ module.exports = {
         let quarterClasses = {}
 
         // Get the summary info
-        let { summary, quarterStartDate, quarterEndDate } = req.body
+        let { summary, startDate, endDate } = req.body
 
         
-        if (moment(quarterStartDate).isValid())
-            quarterClasses.startDate = moment(quarterStartDate)
+        if (moment(startDate).isValid())
+            quarterClasses.startDate = moment(startDate)
         else
             return res.status(400).json({error: 'Data de início do Quadrimestre inválida!'})
         
-        if (moment(quarterEndDate).isValid())
-            quarterClasses.endDate = moment(quarterEndDate)
+        if (moment(endDate).isValid())
+            quarterClasses.endDate = moment(endDate)
         else
             return res.status(400).json({error: 'Data de final do Quadrimestre inválida!'})
 
@@ -52,6 +52,7 @@ module.exports = {
         for (let c = 0; c < classes.length; c++){ 
             let classInfo = {info:classes[c][0], times:[]}
             for (let i = 1; i < classes[c].length; i++) {
+              if (classes[c][i] !== '')
                 classInfo.times.push(classes[c][i])
             }
             classesInfo.push(classInfo)

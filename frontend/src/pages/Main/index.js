@@ -72,8 +72,8 @@ export default function Main() {
     handleSummary({
       university: 'UFABC',
       summary,
-      quarterStartDate: moment(startDate).toISOString(),
-      quarterEndDate: moment(endDate).toISOString()
+      startDate: moment(startDate).toISOString(),
+      endDate: moment(endDate).toISOString()
     })
   }
 
