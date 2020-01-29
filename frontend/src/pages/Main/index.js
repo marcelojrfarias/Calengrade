@@ -41,7 +41,7 @@ export default function Main() {
     if (response.status === 200) {
       // console.log('SUCCESS', response.data)
       FileDownload(response.data, 'MyCalengrade.ics')
-      alert.success('Calegrade gerado com sucesso! :)')
+      alert.success('Calengrade gerado com sucesso! :)')
       alert.success('Agora é só abrir no aplicativo de sua preferência! ;)')
       setSummary('')
     }
