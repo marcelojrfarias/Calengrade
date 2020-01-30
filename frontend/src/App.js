@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 
 import ReactGA from 'react-ga';
@@ -10,9 +10,14 @@ import logo from './assets/logo.svg'
 import FooterMenu from './components/FooterMenu'
 
 const trackingId = "UA-157367386-1";
-ReactGA.initialize(trackingId);
 
 function App() {
+
+  useEffect(() => {
+    ReactGA.initialize(trackingId);
+    ReactGA.pageview('/homepage');
+
+  }, [])
 
   return (
     <div className="container">
