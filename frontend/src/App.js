@@ -16,7 +16,6 @@ function App() {
   useEffect(() => {
     ReactGA.initialize(trackingId);
     ReactGA.pageview('/homepage');
-
   }, [])
 
   return (

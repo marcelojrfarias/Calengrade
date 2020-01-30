@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useAlert } from 'react-alert'
 import FileDownload from 'js-file-download'
+import ReactGA from 'react-ga';
 import api from '../../services/api'
 
 import './styles.css'
+
+const trackingId = "UA-157367386-1";
 
 const moment = require('moment') 
 
@@ -21,6 +24,7 @@ export default function Main() {
 
     setStartDate('2020-02-10')
     setEndDate('2020-05-15')
+    ReactGA.initialize(trackingId);
 
   }, [])
 
@@ -68,6 +72,11 @@ export default function Main() {
       alert.show('Opa! Cole seu resumo!')
       return
     }
+
+    ReactGA.event({
+      category: 'User',
+      action: 'Generate a Calengrade'
+    })
 
     handleSummary({
       university: 'UFABC',
