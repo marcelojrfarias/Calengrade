@@ -8,8 +8,6 @@ import './styles.css'
 
 const trackingId = "UA-157367386-1";
 
-const moment = require('moment') 
-
 export default function Main() {
 
   const alert = useAlert()
@@ -96,12 +94,12 @@ export default function Main() {
       category: 'User',
       action: 'Hit the generate calengrade button (Complete)'
     })
-
+    
     handleSummary({
       university: 'UFABC',
       summary,
-      quarterStartDate: moment(startDate).toISOString(),
-      quarterEndDate: moment(endDate).toISOString()
+      startDate,
+      endDate
     })
   }
 

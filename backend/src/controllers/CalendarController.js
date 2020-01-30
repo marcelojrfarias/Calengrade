@@ -36,7 +36,7 @@ module.exports = {
     classes.forEach( subject => {
       subject.times.forEach(time => {
                 
-        let startOfPeriod = moment(startDate)
+        let startOfPeriod = moment(`${startDate}T00:00:00.000`)
         
         if (startOfPeriod.day() <= getDay(time.day))
             startOfPeriod.add(getDay(time.day) - startOfPeriod.day(), 'days')
@@ -64,7 +64,7 @@ module.exports = {
         else if (time.repeat.indexOf("quinzenal (I)") != -1 || time.repeat.indexOf("quinzenal (II)") != -1)
           recurrenceRule += `INTERVAL=2;`
 
-        recurrenceRule += `UNTIL=${moment.utc(endDate).format("YYYYMMDDThhmmss")}Z`
+        recurrenceRule += `UNTIL=${moment(endDate).format("YYYYMMDDThhmmss")}Z`
 
         let description = ""
         
@@ -79,10 +79,10 @@ module.exports = {
           status: 'CONFIRMED',
           start: start.format('YYYY-M-D-H-m').split("-"),
           startInputType: 'local',
-          startOutputType: 'utc',
+          startOutputType: 'local',
           end: end.format('YYYY-M-D-H-m').split("-"),
           endInputType: 'local',
-          endOutputType: 'utc',
+          endOutputType: 'local',
           recurrenceRule
         }
 
