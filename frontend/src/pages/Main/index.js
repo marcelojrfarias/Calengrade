@@ -6,7 +6,7 @@ import api from '../../services/api'
 
 import './styles.css'
 
-const trackingId = "UA-157367386-1";
+// const trackingId = "UA-157367386-1";
 
 const moment = require('moment') 
 
@@ -24,7 +24,7 @@ export default function Main() {
 
     setStartDate('2020-02-10')
     setEndDate('2020-05-15')
-    ReactGA.initialize(trackingId);
+    // ReactGA.initialize(trackingId);
 
   }, [])
 
