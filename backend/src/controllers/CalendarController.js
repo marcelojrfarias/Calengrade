@@ -78,7 +78,11 @@ module.exports = {
           description,
           status: 'CONFIRMED',
           start: start.format('YYYY-M-D-H-m').split("-"),
+          startInputType: 'local',
+          startOutputType: 'utc',
           end: end.format('YYYY-M-D-H-m').split("-"),
+          endInputType: 'local',
+          endOutputType: 'utc',
           recurrenceRule
         }
 
