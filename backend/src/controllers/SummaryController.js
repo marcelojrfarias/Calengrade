@@ -20,9 +20,6 @@ module.exports = {
         else
             return res.status(400).json({error: 'Data de final do Quadrimestre inválida!'})
 
-        console.log('Start: ', quarterClasses.startDate)
-        console.log('End: ', quarterClasses.endDate)
-
         // Get all classes codes
         let classesCodes = [...summary.match(/[A-Z0-9]{7}[-][0-9]{2}/gi)]
 
