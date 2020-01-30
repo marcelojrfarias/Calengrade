@@ -9,17 +9,19 @@ module.exports = {
 
         // Get the summary info
         let { summary, quarterStartDate, quarterEndDate } = req.body
-
         
         if (moment(quarterStartDate).isValid())
-            quarterClasses.startDate = moment(quarterStartDate)
+          quarterClasses.startDate = moment(quarterStartDate)
         else
             return res.status(400).json({error: 'Data de início do Quadrimestre inválida!'})
         
         if (moment(quarterEndDate).isValid())
-            quarterClasses.endDate = moment(quarterEndDate)
+          quarterClasses.endDate = moment(quarterEndDate)
         else
             return res.status(400).json({error: 'Data de final do Quadrimestre inválida!'})
+
+        console.log('Start: ', quarterClasses.startDate)
+        console.log('End: ', quarterClasses.endDate)
 
         // Get all classes codes
         let classesCodes = [...summary.match(/[A-Z0-9]{7}[-][0-9]{2}/gi)]

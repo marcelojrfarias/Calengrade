@@ -97,6 +97,9 @@ export default function Main() {
       action: 'Hit the generate calengrade button (Complete)'
     })
 
+    console.log('Start: ', moment(startDate).toISOString())
+    console.log('Start: ', moment(endDate).toISOString())
+
     handleSummary({
       university: 'UFABC',
       summary,
