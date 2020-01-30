@@ -1,11 +1,16 @@
 import React from 'react'
 import './App.css'
 
+import ReactGA from 'react-ga';
+
 import Routes from './routes'
 
 import logo from './assets/logo.svg'
 
 import FooterMenu from './components/FooterMenu'
+
+const trackingId = "UA-157367386-1";
+ReactGA.initialize(trackingId);
 
 function App() {
 
