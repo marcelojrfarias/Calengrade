@@ -6,7 +6,7 @@ import api from '../../services/api'
 
 import './styles.css'
 
-// const trackingId = "UA-157367386-1";
+const trackingId = "UA-157367386-1";
 
 const moment = require('moment') 
 
@@ -24,7 +24,9 @@ export default function Main() {
 
     setStartDate('2020-02-10')
     setEndDate('2020-05-15')
-    // ReactGA.initialize(trackingId);
+    
+    ReactGA.initialize(trackingId);
+    ReactGA.pageview('/main');
 
   }, [])
 
@@ -48,6 +50,11 @@ export default function Main() {
       alert.success('Calengrade gerado com sucesso! :)')
       alert.success('Agora é só abrir no aplicativo de sua preferência! ;)')
       setSummary('')
+      
+      ReactGA.event({
+        category: 'System',
+        action: 'Calengrade generated successfully!'
+      })
     }
     else {
       console.log('ERROR', response)
@@ -60,22 +67,34 @@ export default function Main() {
 
     if (startDate === '') {  
       alert.show('Opa! Informe quando começa o quadri!')
+      ReactGA.event({
+        category: 'User',
+        action: 'Hit the generate calengrade button (Without start date)'
+      })
       return
     }
 
     if (endDate === '') {
       alert.show('Opa! Informe quando acaba o quadri!')
+      ReactGA.event({
+        category: 'User',
+        action: 'Hit the generate calengrade button (Without end date)'
+      })
       return
     }
 
     if (summary === '') {
       alert.show('Opa! Cole seu resumo!')
+      ReactGA.event({
+        category: 'User',
+        action: 'Hit the generate calengrade button (Without summary)'
+      })
       return
     }
 
     ReactGA.event({
       category: 'User',
-      action: 'Generate a Calengrade'
+      action: 'Hit the generate calengrade button (Complete)'
     })
 
     handleSummary({
