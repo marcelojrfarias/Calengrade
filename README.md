@@ -67,7 +67,7 @@ $ yarn dev
 
 ## :computer: Aplicação
 
-  <img align="center" alt="App Screenshot" src="https://res.cloudinary.com/marcelojrfarias/image/upload/v1604358272/calengrade_s8v6lt.png"/>
+  <img align="center" alt="App Screenshot" src="https://res.cloudinary.com/marcelojrfarias/image/upload/v1604358272/calengrade_s8v6lt.png" href="http://www.calengrade.com/"/>
 
 ## :memo: Licença
 
