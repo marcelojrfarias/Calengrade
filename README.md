@@ -27,15 +27,15 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#gear-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#computer-application">Application</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-license">License</a>
+  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#gear-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer-aplicacao">Aplicações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licenca">Licença</a>
 </p>
 
-## :rocket: Technologies
+## :rocket: Tecnologias
 
-This project was developed with the following technologies:
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
 - [ReactJS][reactjs]
 - [NodeJS][nodejs]
@@ -47,7 +47,7 @@ This project was developed with the following technologies:
 - [Visual Studio Code][vscode]
 - And some other packages...
 
-## :gear: How To Use
+## :gear: Como usar
 
 To clone and run this application, you'll need [Git][git], [Node.js v14.15.0][nodejs] or higher + [Yarn v1.22][yarn] or higher installed on your computer. From your command line:
 
@@ -65,17 +65,17 @@ $ yarn install
 $ yarn dev
 ```
 
-## :computer: Application
+## :computer: Aplicação
 
   <img align="center" alt="App Screenshot" src="https://res.cloudinary.com/marcelojrfarias/image/upload/v1604358272/calengrade_s8v6lt.png"/>
 
-## :memo: License
+## :memo: Licença
 
-This project is under the MIT license. See the [LICENSE](https://github.com/marcelojrfarias/calengrade/blob/master/LICENSE) for more information.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/marcelojrfarias/calengrade/blob/master/LICENSE) para mais informações.
 
 ---
 
-Made with 💗 by Marcelo Farias 👋 [Get in touch!](https://www.linkedin.com/in/marcelojrfarias/)
+Feito com 💗 por Marcelo Farias 👋 [Entre em contato!](https://www.linkedin.com/in/marcelojrfarias/)
 
 [nodejs]: https://nodejs.org/
 [typescript]: https://www.typescriptlang.org/
