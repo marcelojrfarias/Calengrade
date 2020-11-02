@@ -28,9 +28,9 @@
 
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#gear-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#computer-aplicacao">Aplicações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licenca">Licença</a>
+  <a href="#gear-como-usar">Como rodar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer-aplicação">Aplicações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Licença</a>
 </p>
 
 ## :rocket: Tecnologias
@@ -47,7 +47,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [Visual Studio Code][vscode]
 - And some other packages...
 
-## :gear: Como usar
+## :gear: Como rodar
 
 To clone and run this application, you'll need [Git][git], [Node.js v14.15.0][nodejs] or higher + [Yarn v1.22][yarn] or higher installed on your computer. From your command line:
 
