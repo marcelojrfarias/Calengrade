@@ -32,7 +32,11 @@ module.exports = {
       if (day.indexOf("Domingo") != -1) return "SU"
       return "ERROR!"
     }
-        
+    
+    function formatEventDate(momentDate) {
+      return momentDate.format('YYYY-M-D-H-m').split("-").map(str => Number(str));
+    }
+
     classes.forEach( subject => {
       subject.times.forEach(time => {
                 
@@ -74,13 +78,13 @@ module.exports = {
         
         let event = {
           title: subject.title,
-          location: 'UFABC - ' + subject.campus, 
+          location: `UFABC - ${subject.campus}`, 
           description,
           status: 'CONFIRMED',
-          start: start.format('YYYY-M-D-H-m').split("-"),
+          start: formatEventDate(start),
           startInputType: 'local',
           startOutputType: 'local',
-          end: end.format('YYYY-M-D-H-m').split("-"),
+          end: formatEventDate(end),
           endInputType: 'local',
           endOutputType: 'local',
           recurrenceRule
