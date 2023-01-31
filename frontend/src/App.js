@@ -30,13 +30,13 @@ function App() {
           },
           {
             title: 'Contato',
-            link: 'https://facebook.com/marcelojrfarias'
+            link: 'https://link.marcelofarias.com/calengrade-contato'
           }
         ]}
       />
       
       <div className="footerMessage">
-        <span>Feito com <span role="img" aria-label="Heart">❤️</span> por <a rel="noopener noreferrer" target="_blank" href="https://github.com/marcelojrfarias">Marcelo Farias</a> com uma <span role="img" aria-label="Help">✋</span> dos amigos</span>
+        <span>Feito com <span role="img" aria-label="Heart">❤️</span> por <a rel="noopener noreferrer" target="_blank" href="https://github.com/marcelojrfarias"><u>Marcelo Farias</u></a></span>
       </div>
 
     </div>
