@@ -16,7 +16,8 @@
     "react-dom": "^16.12.0",
     "react-ga": "^2.7.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^5.x.x"
+    "react-scripts": "^5.x.x",
+    "ics": "^2.18.0"
   },
   "scripts": {
     "start": "react-scripts start",
