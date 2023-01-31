@@ -18,6 +18,6 @@
   "scripts": {
     "start": "npm start --prefix backend",
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm run start --prefix frontend\"",
-    "heroku-postbuild": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
   }
 }
