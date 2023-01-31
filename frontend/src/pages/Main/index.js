@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useAlert } from 'react-alert'
-import FileDownload from 'js-file-download'
 import ReactGA from 'react-ga';
-import api from '../../services/api'
+
+import SummaryController from '../../services/SummaryController'
+import CalendarController from '../../services/CalendarController'
 
 import './styles.css'
 
@@ -28,23 +29,27 @@ export default function Main() {
 
   }, [])
 
-  async function handleSummary(form) {
-    const response = await api.post('/summary', form)
-    if (response.status === 200) {
-      handleCalendar(response.data)
-      // console.log('SUCCESS', response)
-    }
-    else {
-      console.log('ERROR', response)
-      alert.error(response.data)
+  async function localHandleSummary(form) {
+    try {
+      const summary = SummaryController(form)
+      localHandleCalendar(summary)
+    } catch (e) {
+      console.log('ERROR', e)
+      alert.error(e)
     }
   }
 
-  async function handleCalendar(summary) {
-    const response = await api.post('/calendar', summary, {responseType: 'text'})
-    if (response.status === 200) {
-      // console.log('SUCCESS', response.data)
-      FileDownload(response.data, 'MyCalengrade.ics')
+  async function localHandleCalendar(summary) {
+    try {
+      const calendar = CalendarController(summary)
+
+      const blob = new Blob([calendar], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.download = `MyCalengrade-${Date.now()}.ics`;
+      link.href = url;
+      link.click();
+
       alert.success('Calengrade gerado com sucesso! :)')
       alert.success('Agora é só abrir no aplicativo de sua preferência! ;)')
       setSummary('')
@@ -54,9 +59,9 @@ export default function Main() {
         action: 'Calengrade generated successfully!'
       })
     }
-    else {
-      console.log('ERROR', response)
-      alert.error(response.data)
+    catch (e) {
+      console.log('ERROR', e)
+      alert.error(e)
     }
   }
 
@@ -95,7 +100,7 @@ export default function Main() {
       action: 'Hit the generate calengrade button (Complete)'
     })
     
-    handleSummary({
+    localHandleSummary({
       university: 'UFABC',
       summary,
       startDate,
