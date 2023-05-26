@@ -21,8 +21,8 @@ export default function Main() {
 
     // Get the period dates
 
-    setStartDate('2023-02-06')
-    setEndDate('2023-04-29')
+    setStartDate('2023-05-29')
+    setEndDate('2023-08-23')
     
     ReactGA.initialize(trackingId);
     ReactGA.pageview('/main');
