@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useAlert } from 'react-alert'
-import ReactGA from 'react-ga';
 
 import SummaryController from '../../services/SummaryController'
 import CalendarController from '../../services/CalendarController'
 
 import './styles.css'
-
-const trackingId = "UA-157367386-1";
 
 export default function Main() {
 
@@ -23,9 +20,6 @@ export default function Main() {
 
     setStartDate('2023-05-29')
     setEndDate('2023-08-23')
-    
-    ReactGA.initialize(trackingId);
-    ReactGA.pageview('/main');
 
   }, [])
 
@@ -53,11 +47,6 @@ export default function Main() {
       alert.success('Calengrade gerado com sucesso! :)')
       alert.success('Agora é só abrir no aplicativo de sua preferência! ;)')
       setSummary('')
-      
-      ReactGA.event({
-        category: 'System',
-        action: 'Calengrade generated successfully!'
-      })
     }
     catch (e) {
       console.log('ERROR', e)
@@ -70,35 +59,18 @@ export default function Main() {
 
     if (startDate === '') {  
       alert.show('Opa! Informe quando começa o quadri!')
-      ReactGA.event({
-        category: 'User',
-        action: 'Hit the generate calengrade button (Without start date)'
-      })
       return
     }
 
     if (endDate === '') {
       alert.show('Opa! Informe quando acaba o quadri!')
-      ReactGA.event({
-        category: 'User',
-        action: 'Hit the generate calengrade button (Without end date)'
-      })
       return
     }
 
     if (summary === '') {
       alert.show('Opa! Cole seu resumo!')
-      ReactGA.event({
-        category: 'User',
-        action: 'Hit the generate calengrade button (Without summary)'
-      })
       return
     }
-
-    ReactGA.event({
-      category: 'User',
-      action: 'Hit the generate calengrade button (Complete)'
-    })
     
     localHandleSummary({
       university: 'UFABC',
