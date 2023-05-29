@@ -41,7 +41,7 @@ export default function Main() {
       const downloadURL = URL.createObjectURL(blob)
       const downloadLink = document.createElement('a')
       downloadLink.href = downloadURL
-      downloadLink.download = `Meu Calengrade - ${title}.ics`
+      downloadLink.download = `Meu Calengrade - Quadrimestre 2 - 2023.ics`
       downloadLink.href = downloadURL;
       downloadLink.click();
       URL.revokeObjectURL(downloadURL);
