@@ -37,12 +37,14 @@ export default function Main() {
     try {
       const calendar = CalendarController(summary)
 
-      const blob = new Blob([calendar], { type: "text/plain" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.download = `MyCalengrade-${Date.now()}.ics`;
-      link.href = url;
-      link.click();
+      const blob = new Blob([calendar], { type: "text/calendar" })
+      const downloadURL = URL.createObjectURL(blob)
+      const downloadLink = document.createElement('a')
+      downloadLink.href = downloadURL
+      downloadLink.download = `Meu Calengrade - ${title}.ics`
+      downloadLink.href = downloadURL;
+      downloadLink.click();
+      URL.revokeObjectURL(downloadURL);
 
       alert.success('Calengrade gerado com sucesso! :)')
       alert.success('Agora é só abrir no aplicativo de sua preferência! ;)')
