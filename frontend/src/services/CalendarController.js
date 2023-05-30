@@ -2,7 +2,7 @@ import moment from'moment'
 import * as ics from 'ics'
 
 export default function CalendarController(summary) {
-  var { classes, startDate, endDate } = summary;
+  let { classes, startDate, endDate } = summary;
 
   const calendar = []
       
@@ -92,6 +92,7 @@ export default function CalendarController(summary) {
   const { error, value } = ics.createEvents(calendar)
 
   if (error) {
+    console.log('ERROR: ', error)
     return {error}
   }
   else {

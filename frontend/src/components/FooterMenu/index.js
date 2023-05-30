@@ -1,12 +1,10 @@
 import React from 'react'
 import './styles.css'
 
-export default function FooterMenu(props) {
-
-  const { menuItems } = props;
+export default function FooterMenu({ menuItems }) {
 
   return (
-    <div className="container">
+    <div className="footer">
       {menuItems.map((menuItem, index) => (
         <div key={index}>
           <span>
