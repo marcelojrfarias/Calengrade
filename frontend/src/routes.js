@@ -1,14 +1,33 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route} from 'react-router-dom'
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from 'react-router-dom';
 
-import Main from './pages/Main'
+import Error from './pages/Error'
+import Welcome from './pages/Welcome'
+import Summary from './pages/Summary'
+import Quarter from './pages/Quarter'
+import Preview from './pages/Preview'
+import Thanks from './pages/Thanks'
 
 export default function Routes() {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={Main}/>
-      </Switch>
-    </BrowserRouter>
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route path="/" exact element={<Welcome />} errorElement={<Error />}/>
+        <Route path="/resumo" element={<Summary />}/>
+        <Route path="/quadri" element={<Quarter />}/>
+        <Route path="/preview" element={<Preview />}/>
+        <Route path="/obrigado" element={<Thanks />}/>
+      </>
+    )
   )
+
+  return (
+    <RouterProvider router={router} />
+  ) 
 }

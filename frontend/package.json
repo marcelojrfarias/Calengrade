@@ -16,7 +16,7 @@
     "react-alert-template-basic": "^1.0.0",
     "react-dom": "^16.12.0",
     "react-gtm-module": "^2.0.11",
-    "react-router-dom": "^5.1.2",
+    "react-router-dom": "^6.4.0",
     "react-scripts": "^5.x.x"
   },
   "scripts": {
