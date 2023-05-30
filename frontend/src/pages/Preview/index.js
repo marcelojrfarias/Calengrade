@@ -35,7 +35,7 @@ export default function Preview() {
   useEffect(() => {
 
     if (classes.length <= 0 || !startDate || !endDate) {
-      navigateKeepParams('/')
+      navigateKeepParams('/resumo')
     }
 
     switch (step) {
