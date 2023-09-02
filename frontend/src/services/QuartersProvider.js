@@ -1,8 +1,23 @@
 const Quarters = [
     {
         title: 'Definir datas manualmente',
-        startDate: '2023-05-29',
-        endDate: '2023-08-23'
+        startDate: '2023-09-18',
+        endDate: '2023-12-20'
+    },
+    {
+        title: '3/2024',
+        startDate: '2024-09-16',
+        endDate: '2024-12-07'
+    },
+    {
+        title: '2/2024',
+        startDate: '2024-06-03',
+        endDate: '2024-08-24'
+    },
+    {
+        title: '1/2024',
+        startDate: '2024-02-05',
+        endDate: '2024-04-27'
     },
     {
         title: '3/2023',
