@@ -84,8 +84,6 @@ export default function SummaryController(summary) {
         }
       ]
     }
-
-    console.log(myClassInfo)
       
     // Split the classes times
     let myClassTimes = []
