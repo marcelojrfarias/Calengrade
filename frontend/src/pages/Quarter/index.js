@@ -29,8 +29,8 @@ export default function Quarter() {
     return 0;
   }) 
 
-  const [startDate, setStartDate] = useState('2023-05-29')
-  const [endDate, setEndDate] = useState('2023-08-23')
+  const [startDate, setStartDate] = useState(() => QuartersProvider[quarter].startDate)
+  const [endDate, setEndDate] = useState(() => QuartersProvider[quarter].endDate)
 
   const [startDateError, setStartDateError] = useState('')
   const [endDateError, setEndDateError] = useState('')
