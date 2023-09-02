@@ -51,7 +51,8 @@ export default function SummaryController(summary) {
     // Split the classes info
     let myClassInfo = {
       title: (
-        originalClass.info.match(/(?![\s-\s])([0-9a-záàâãéèêíïóôõöúçñ, ]{2,})(?=\s\w{1,2}-)/gi)
+        // originalClass.info.match(/(?![\s-\s])([0-9a-záàâãéèêíïóôõöúçñ, ]{2,})(?=\s\w{1,2}-)/gi)
+        originalClass.info.match(/(?<=[\d-]\s-\s)(.+?)(?=\s\w{1,2}-|$)/gi)
         ?? ['Título não identificado'])[0],
       campus: (
         originalClass.info.match(/(Campus\s)(Santo\sAndré|São\sBernardo\sdo\sCampo)/gi)
