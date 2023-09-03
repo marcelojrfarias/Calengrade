@@ -84,7 +84,7 @@ export default function SummaryController(summary) {
         }
       ]
     }
-      
+    
     // Split the classes times
     let myClassTimes = []
     for (var t = 0; t < originalClass.times.length; t++) {
