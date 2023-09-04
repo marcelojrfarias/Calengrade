@@ -13,7 +13,8 @@ const options = {
 }
 
 TagManager.initialize({
-    gtmId: 'GTM-TJWJPVT'
+    // gtmId: process.env.REACT_APP_GTM_ID
+    gtmId: 'GTM-TJWJPVT' // add to env and delete
 });
 
 ReactDOM.render(

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import useNavigateKeepingSearchParams from '../../utils/useNavigateKeepingSearchParams'
@@ -6,6 +6,12 @@ import QuartersProvider from '../../services/QuartersProvider'
 import CalengradeContext from '../../context/CalengradeContext'
 
 export default function Quarter() {
+
+  useEffect(() => {
+    window.dataLayer.push({
+      event: 'pageview'
+    });
+  }, []) // eslint-disable-line
 
   const { calengrade, setCalengrade } = useContext(CalengradeContext);
 
@@ -39,6 +45,13 @@ export default function Quarter() {
     if (value !== 0) {
       setStartDate(QuartersProvider[value].startDate)
       setEndDate(QuartersProvider[value].endDate)
+      window.dataLayer.push({
+        event: 'quarter_change',
+        payload: {
+          oldQuarter: QuartersProvider[quarter].title,
+          newQuarter: QuartersProvider[value].title
+        }
+      });
     }
     setQuarter(value)
   }
@@ -50,6 +63,13 @@ export default function Quarter() {
     } else {
       setStartDateError('')
       setStartDate(value)
+      window.dataLayer.push({
+        event: 'startdate_change',
+        payload: {
+          oldStartDate: startDate,
+          newStartDate: value
+        }
+      });
     }
     
   }
@@ -61,6 +81,13 @@ export default function Quarter() {
     } else {
       setEndDateError('')
       setEndDate(value)
+      window.dataLayer.push({
+        event: 'enddate_change',
+        payload: {
+          oldEndDate: endDate,
+          newEndDate: value
+        }
+      });
     }
     
   }
@@ -75,7 +102,16 @@ export default function Quarter() {
           endDate
         }
       })
+      window.dataLayer.push({
+        event: 'calengrade_generate',
+        payload: {
+          classes: (calengrade.classes ?? []).map(c => c.title),
+          startDate: calengrade.startDate,
+          endDate: calengrade.startDate
+        }
+      });
       navigateKeepParams('/preview')
+      return
     }
     
     navigateKeepParams('/resumo')

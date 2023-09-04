@@ -38,6 +38,12 @@ export default function Summary() {
   })
 
   useEffect(() => {
+    window.dataLayer.push({
+      event: 'pageview'
+    });
+  }, []) // eslint-disable-line
+
+  useEffect(() => {
     setCalengrade({
       ...calengrade,
       quarter: QuartersProvider[quarter]
@@ -46,6 +52,15 @@ export default function Summary() {
 
   const handleChange = value => {
     setSummary(value)
+
+    console.log(value)
+
+    window.dataLayer.push({
+      event: 'summary_update',
+      payload: {
+        summary: value.replace(/\n/g, '&')
+      }
+    });
 
     if (value === '') {
       setMessage(['Cole seu resumo de disciplinas ;)', 'error'])
@@ -76,18 +91,32 @@ export default function Summary() {
   }
 
   const handleClick = () => {
+    window.dataLayer.push({
+      event: 'btn_click_generate'
+    });
     if (summary === '') {
       setMessage(['Cole seu resumo de disciplinas!!!', 'error'])
     }
     else if ((calengrade.classes ?? []).length <= 0) {
       setMessage(['Nenhuma disciplina identificada :(', 'error'])
     } else {
+      window.dataLayer.push({
+        event: 'calengrade_generate',
+        payload: {
+          classes: (calengrade.classes ?? []).map(c => c.title),
+          startDate: calengrade.startDate,
+          endDate: calengrade.startDate
+        }
+      });
       navigateKeepParams('/preview')
     }
     
   }
 
   async function handlePaste () {
+    window.dataLayer.push({
+      event: 'btn_click_paste'
+    });
     try {
       textareaRef.current.focus();
       const copied = await navigator.clipboard.readText()
