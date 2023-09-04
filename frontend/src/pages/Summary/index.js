@@ -53,8 +53,6 @@ export default function Summary() {
   const handleChange = value => {
     setSummary(value)
 
-    console.log(value)
-
     window.dataLayer.push({
       event: 'summary_update',
       payload: {

@@ -61,8 +61,6 @@ export default function Preview() {
         try {
           const { calendar, quarter: { title } } = calengrade
 
-          console.log()
-
           if (calendar) {
             const blob = new Blob([calendar], { type: "text/calendar" })
 
@@ -84,7 +82,7 @@ export default function Preview() {
 
         }
         catch (e) {
-          console.log('ERROR', e)
+          console.log('ERROR: ', e)
           alert('Não foi possível baixar seu Calengrade!')
           if (timer) clearInterval(timer)
           navigateKeepParams('/resumo')
