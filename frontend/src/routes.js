@@ -11,7 +11,6 @@ import Welcome from './pages/Welcome'
 import Summary from './pages/Summary'
 import Quarter from './pages/Quarter'
 import Preview from './pages/Preview'
-import Thanks from './pages/Thanks'
 
 export default function Routes() {
 
@@ -22,7 +21,6 @@ export default function Routes() {
         <Route path="/resumo" element={<Summary />}/>
         <Route path="/quadri" element={<Quarter />}/>
         <Route path="/preview" element={<Preview />}/>
-        <Route path="/obrigado" element={<Thanks />}/>
       </>
     )
   )
