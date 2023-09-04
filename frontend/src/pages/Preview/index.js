@@ -19,6 +19,11 @@ export default function Preview() {
   const [timer, setTimer] = useState(null)
 
   useEffect(() => {
+
+    window.dataLayer.push({
+      event: 'pageview'
+    });
+
     let interval
 
     if (!timer) {
@@ -121,8 +126,19 @@ export default function Preview() {
       
 
       <div className='twoButtons'>
-        <button onClick={() => window.open('https://link.calengrade.com/fazer-doacao', '_blank')}>Fazer doação</button>
-        <button onClick={() => window.open('https://link.calengrade.com/compartilhar', '_blank')}>Compartilhar</button>
+        <button onClick={() => {
+          window.dataLayer.push({
+            event: 'btn_click_donate'
+          });
+          window.open('https://link.calengrade.com/fazer-doacao', '_blank')
+        }}>Fazer doação</button>
+
+        <button onClick={() => {
+          window.dataLayer.push({
+            event: 'btn_click_share'
+          });
+          window.open('https://link.calengrade.com/compartilhar', '_blank')
+        }}>Compartilhar</button>
       </div>
     </>
   )

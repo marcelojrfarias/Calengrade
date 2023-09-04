@@ -1,6 +1,14 @@
+import { useEffect } from "react";
 import { useRouteError } from "react-router-dom";
 
 export default function Error() {
+
+  useEffect(() => {
+    window.dataLayer.push({
+      event: 'pageview'
+    });
+  }, []) // eslint-disable-line
+
   const error = useRouteError();
   console.error(error);
 

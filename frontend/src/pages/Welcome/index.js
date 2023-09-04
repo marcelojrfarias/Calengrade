@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import welcomeImage from '../../assets/welcome.svg'
 
@@ -7,6 +7,13 @@ import useNavigateKeepingSearchParams from '../../utils/useNavigateKeepingSearch
 export default function Welcome() {
   
   const navigateKeepParams = useNavigateKeepingSearchParams()
+
+
+  useEffect(() => {
+    window.dataLayer.push({
+      event: 'pageview'
+    });
+  }, []) // eslint-disable-line
 
   return (
     <>
@@ -19,7 +26,13 @@ export default function Welcome() {
 
       <button
         className=''
-        onClick={ () => navigateKeepParams('/resumo') }>
+        onClick={ () => {
+          navigateKeepParams('/resumo')
+
+          window.dataLayer.push({
+            event: 'btn_click_start'
+          });
+         } }>
           Começar
       </button>
     </>
