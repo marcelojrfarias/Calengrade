@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 100%;
+  gap: 16px;
+}
+
+.header a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.header a:hover {
+  text-decoration: none;
+  color: #fc0;
+}
