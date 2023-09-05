@@ -1,15 +1,11 @@
 .footer {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
-  /* align-items: center; */
-  /* justify-content: center; */
-}
-
-.footer div {
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  width: 100%;
+  gap: 16px;
 }
 
 .footer a {

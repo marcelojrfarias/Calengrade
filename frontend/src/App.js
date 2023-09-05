@@ -5,7 +5,7 @@ import Routes from './routes'
 
 import logo from './assets/logo.svg'
 
-// import FooterMenu from './components/FooterMenu'
+import FooterMenu from './components/FooterMenu'
 import CalengradeContext from './context/CalengradeContext'
 
 function App() {
@@ -31,27 +31,28 @@ function App() {
           or errorElement prop on your route. */}
         </div>
       </CalengradeContext.Provider>
-{/*       
-      <FooterMenu
-        menuItems={[
-          {
-            title: 'Bugs e Sugestões',
-            link: 'https://link.cariri.tech/calengrade-bugs'
-          },
-          {
-            title: 'Código Fonte',
-            link: 'https://link.cariri.tech/calengrade-codigo-fonte'
-          },
-          {
-            title: 'WhatsApp',
-            link: 'https://link.marcelofarias.com/calengrade-contato'
-          }
-        ]}
-      /> */}
+
       
       <div className="footerMessage">
         <span>Feito com <span role="img" aria-label="Heart">💚</span> e <span role="img" aria-label="Beer">🍺</span> por <a rel="noopener noreferrer" target="_blank" href="https://link.cariri.tech/calengrade-linkedin"><u>Marcelo Farias</u></a></span>
       </div>
+
+      <FooterMenu
+        menuItems={[
+          {
+            title: 'Bugs e Sugestões',
+            link: 'https://link.calengrade.com/bugs'
+          },
+          {
+            title: 'Código Fonte',
+            link: 'https://link.calengrade.com/code'
+          },
+          {
+            title: 'Contato',
+            link: 'https://link.calengrade.com/contato'
+          }
+        ]}
+      />
 
     </div>
   )

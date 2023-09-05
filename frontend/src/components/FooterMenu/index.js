@@ -6,11 +6,14 @@ export default function FooterMenu({ menuItems }) {
   return (
     <div className="footer">
       {menuItems.map((menuItem, index) => (
-        <div key={index}>
-          <span>
-            <a rel="noopener noreferrer" target="_blank" href={menuItem.link}>{menuItem.title}</a>
-          </span>
-        </div>
+        <a
+          key={index}
+          rel="noopener noreferrer"
+          target="_blank"
+          href={menuItem.link}>{
+            menuItem.title
+          }
+        </a>
       ))}
     </div>
   )
