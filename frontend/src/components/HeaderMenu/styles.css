@@ -1,20 +1,20 @@
-.footer {
+.header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 16px;
+  margin-bottom: 16px;
   width: 100%;
   gap: 16px;
 }
 
-.footer a {
+.header a {
   color: #ffffff;
   font-size: 16px;
   text-decoration: underline;
 }
 
-.footer a:hover {
+.header a:hover {
   text-decoration: none;
   color: #ffcc00;
 }

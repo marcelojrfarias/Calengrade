@@ -5,7 +5,7 @@ import Routes from './routes'
 
 import logo from './assets/logo.svg'
 
-import FooterMenu from './components/FooterMenu'
+import HeaderMenu from './components/HeaderMenu'
 import CalengradeContext from './context/CalengradeContext'
 
 function App() {
@@ -21,23 +21,8 @@ function App() {
     <div className="app">
 
       <img src={logo} alt="Calengrade" className="logo"/>
-      
-      <CalengradeContext.Provider value={contextValue}>
-        <div className="content">
-          <Routes />
-          {/* 💿 Hey developer 👋
-          You can provide a way better UX than this when your
-          app throws errors by providing your own ErrorBoundary
-          or errorElement prop on your route. */}
-        </div>
-      </CalengradeContext.Provider>
 
-      
-      <div className="footerMessage">
-        <span>Feito com <span role="img" aria-label="Heart">💚</span> e <span role="img" aria-label="Beer">🍺</span> por <a rel="noopener noreferrer" target="_blank" href="https://link.cariri.tech/calengrade-linkedin"><u>Marcelo Farias</u></a></span>
-      </div>
-
-      <FooterMenu
+      <HeaderMenu
         menuItems={[
           {
             title: 'Bugs e Sugestões',
@@ -53,6 +38,21 @@ function App() {
           }
         ]}
       />
+      
+      <CalengradeContext.Provider value={contextValue}>
+        <div className="content">
+          <Routes />
+          {/* 💿 Hey developer 👋
+          You can provide a way better UX than this when your
+          app throws errors by providing your own ErrorBoundary
+          or errorElement prop on your route. */}
+        </div>
+      </CalengradeContext.Provider>
+
+      
+      <div className="footerMessage">
+        <span>Feito com <span role="img" aria-label="Heart">💚</span> e <span role="img" aria-label="Beer">🍺</span> por <a rel="noopener noreferrer" target="_blank" href="https://link.cariri.tech/calengrade-linkedin"><u>Marcelo Farias</u></a></span>
+      </div>
 
     </div>
   )
